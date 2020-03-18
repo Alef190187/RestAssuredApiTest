@@ -25,11 +25,13 @@ public class DataDrivenTest {
 	     
 	   int rowNum =reader.getRowCount("TestData");
 	   int colNum = reader.getColumnCount("TestData");
+	   //create object of two dimension array
 	   String empdata[][] = new String[rowNum][colNum];
 	   for(int i = 1; i<=rowNum; i++){
 		   
 		  for(int j=0; j<colNum; j++) {
-			  empdata [i][j] = reader.getCellData("TestData", i, j);
+			  //store data in 2 dimension array
+			  empdata [i-1][j] = reader.getCellData("TestData", i, j);
 			   
 		   }
 	   }
